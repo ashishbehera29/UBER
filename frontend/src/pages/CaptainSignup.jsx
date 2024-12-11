@@ -11,10 +11,14 @@ const CaptainSignup = () => {
 
   const submitHandeler=(e)=>{
       e.preventDefault()
-      setUserData({email:email,
-         password:password,
-          firstname:Firstname, 
-          lastname:Lastname})  
+      setUserData({
+       fullName:{
+        firstname:Firstname, 
+        lastname:Lastname
+       },
+       email:email,
+       password:password
+       })  
          
           
       setEmail('')
@@ -32,12 +36,12 @@ const CaptainSignup = () => {
     <img className="w-20 mb-3" src="https://www.svgrepo.com/show/505031/uber-driver.svg" alt="" />
     <form onSubmit={ (e)=>{submitHandeler(e)}}>
 
-    <h3 className="text-lg w-1/2 font-medium mb-2">Whats your Name</h3>
+    <h3 className="text-lg  font-medium mb-2">Whats our captain Name</h3>
     <div className="flex gap-4 mb-6 ">
     <input  required className="bg-[#eeeeee] w-1/2 rounded px-4 py-2 border  text-lg placeholder:text-base" type="text" placeholder="Firstname" value={Firstname} onChange={(e)=>{setFirstname(e.target.value)}}/>
     <input  required className="bg-[#eeeeee] w-1/2  rounded px-4 py-2 border  text-lg placeholder:text-base" type="text" placeholder="Last name" value={Lastname} onChange={(e)=>{setLastname(e.target.value)}}/>
     </div>
-    <h3 className="text-lg font-medium mb-2">Whats your email</h3>
+    <h3 className="text-lg font-medium mb-2">Whats our captain email</h3>
     <input  required className="bg-[#eeeeee] mb-6 rounded px-4 py-2 border w-full text-lg placeholder:text-base" type="email" placeholder="email@example.com" value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
     <h3 className="text-lg font-medium mb-2">Enter Password</h3>
     <input  required className="bg-[#eeeeee] mb-6 rounded px-4 py-2 border w-full text-lg placeholder:text-base" type="password" placeholder="password" value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
