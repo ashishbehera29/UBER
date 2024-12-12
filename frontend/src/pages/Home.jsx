@@ -1,5 +1,5 @@
 
-const Home = () => {
+function Home() {
   return (
     <div>
       home
